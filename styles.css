@@ -17,38 +17,23 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-header h1 {
-    font-size: 2em;
-    color: #fff;
-}
-
-nav ul {
+header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    justify-content: center;
 }
 
-nav ul li {
-    margin: 0;
+header nav ul li {
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #fff;
+header nav ul li a {
     text-decoration: none;
-    font-size: 1em;
-    transition: color 0.3s;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     color: #1e90ff;
 }
 
@@ -57,16 +42,52 @@ section {
 }
 
 section h2 {
-    font-size: 2.5em;
-    text-align: center;
     margin-bottom: 40px;
+    text-align: center;
+    color: #1e90ff;
 }
 
-section p {
+.project-card, .activity-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover, .activity-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img, .activity-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 2px solid #1e90ff;
+}
+
+.description {
+    padding: 20px;
     text-align: center;
-    font-size: 1.2em;
-    line-height: 1.6em;
-    margin-bottom: 20px;
+}
+
+.project-card .description, .activity-card .description {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: top 0.3s ease;
+    overflow-y: auto;
+}
+
+.project-card:hover .description, .activity-card:hover .description {
+    top: 0;
 }
 
 footer {
@@ -76,67 +97,5 @@ footer {
 }
 
 footer p {
-    font-size: 0.9em;
-    color: #a9a9a9;
-}
-
-/* Activity and Project Section Styles */
-.activity-card, .project-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.activity-card img, .project-card img {
-    transition: opacity 0.5s ease;
-}
-
-.activity-card:hover img, .project-card:hover img {
-    opacity: 0.3;
-}
-
-.description {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    background: rgba(0, 0, 0, 0.7); /* Optional: add background for better readability */
-    padding: 10px; /* Optional: add padding for better appearance */
-    border-radius: 5px; /* Optional: add border radius for better appearance */
-}
-
-.activity-card:hover .description, .project-card:hover .description {
-    opacity: 1;
-}
-
-.activity-icon, .project-icon {
-    width: 100%;
-    height: auto;
-}
-
-/* Form and Input Styles */
-#contact-form input, #contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    background-color: #121212;
-    border: 1px solid #444;
-    border-radius: 5px;
-    color: #fff;
-}
-
-#contact-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #1f1f1f;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    transition: background-color 0.3s ease;
-}
-
-#contact-form button:hover {
-    background-color: #333;
+    margin: 0;
 }
